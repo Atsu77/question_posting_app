@@ -1,0 +1,17 @@
+<div class="logo-img-session">
+    <%= image_tag("logo.svg")%>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'partial/error_messages' %>
+
+        <%= f.email_field :email, placeholder: "メールアドレス" %>
+        <%= f.password_field :password, placeholder: "パスワード"%>
+        <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
+        <div class="button">
+            <%= f.submit "登録" , class: 'button'%>
+        </div>
+        <% end %>
+    </div>
+</div>
