@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "質問投稿サイトにようこそ!"
-      redirect_to :root
+      log_in @user
+      redirect_to 
     else
       render action: :new
     end
