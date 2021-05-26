@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:notice] = "質問投稿サイトにようこそ!"
       redirect_to :root
     else
       render action: :new
