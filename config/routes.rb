@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'users#new'
   resources :users
-  resources :top, only: %i(index)
+  resources :questions, only: %i(index new create)
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#delete'
+  delete 'logout', to: 'sessions#destroy'
 end

@@ -4,47 +4,10 @@
 
 //form
 
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .logo-img-session {
   text-align: center;
   img {
     height: 150px;
     margin: 100px 0;
-  }
-}
-
-input,
-textarea,
-select,
-.uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: 2.5em;
-  border-radius: 10px;
-  padding-left: 10px;
-}
-
-input::placeholder{
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.button {
-  text-align: center;
-  input {
-    margin-top: 25px;
-    width: 50%;
-    background-color: #36bfff;
-    border-radius: 30px;
-    border: none;
   }
 }

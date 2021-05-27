@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	include SessionsHelper
+
   def show
     @user = User.find(params[:id])
   end
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "質問投稿サイトにようこそ!"
       log_in @user
-      redirect_to 
+      redirect_to new_question_path
     else
       render action: :new
     end

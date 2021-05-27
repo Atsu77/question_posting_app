@@ -1,0 +1,11 @@
+<div class="col-md-8 offset-md-2 questions">
+    <%@questions.each do |question|%>
+    <ul>
+        <li id="questions-<%= question.id%>">
+            <%= render 'question', question: question%>
+        </li>
+        <hr>
+    </ul>
+    <% end %>
+    <%= paginate @questions %>
+</div>
