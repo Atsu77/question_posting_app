@@ -3,7 +3,11 @@ class QuestionsController < ApplicationController
     include UsersHelper
 
     def index
-        @questions = current_user.questions.page(params[:page]).per(4)
+        @questions = Question.page(params[:page]).per(4)
+    end
+
+    def show
+        @question = Question.find(params[:id])
     end
 
     def new

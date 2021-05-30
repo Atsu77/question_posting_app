@@ -1,2 +1,2 @@
-    <%= gravatar_for(question.user)%>
-    <span class="content"><%= question.title%></span>
+    <%= link_to gravatar_for(question.user), user_path(question.user.id) %>
+    <span class="content"><%= link_to question.title, question_path(question.id) %></span>

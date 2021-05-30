@@ -1,7 +1,6 @@
 ////universal
 html,
-body,
-.container{
+body{
   height: 100%;
 }
 
@@ -59,7 +58,18 @@ hr {
   size: 50px;
 }
 
+
 //header
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.body {
+  padding-top: 58.3px;
+}
+
 
 .logo-img {
   height: 30px;

@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
+    flash[:notice] = 'ログアウトしました'
     redirect_to login_path
   end
 end
