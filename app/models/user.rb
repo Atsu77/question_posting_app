@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :questions,  -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :questions,  -> { order(created_at: :desc) }, 
+  dependent: :destroy
+  has_many :answers
   before_save { self.email = email.downcase }
   validates :name, length: { maximum: 15 }
   EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
