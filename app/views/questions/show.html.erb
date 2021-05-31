@@ -1,8 +1,18 @@
 <div class="show__question">
-  <%= link_to gravatar_for(question.user), user_path(question.user.id) %>
-  <%= @question.title%>
-  <hr>
-  <div class="show__reply">
-    <% form_with%>
-  </div>
+    <%= link_to gravatar_for(@question.user) %>
+    <div class="show__question_title">
+        <%= @question.title  %>
+    </div>
+    <div class="show__question_content">
+        <%= @question.content%>
+    </div>
+    <hr>
+    <div class="show__reply">
+        <%= form_with(url: question_answers_path(@question), local: true) do |f| %>
+        <%= f.text_area :content, size: '60x12'%>
+        <div class="button">
+            <%= f.submit '回答する', class: 'button'%>
+        </div>
+        <% end %>
+    </div>
 </div>

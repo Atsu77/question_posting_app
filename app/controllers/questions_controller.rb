@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
+        @answer = @question.answers
     end
 
     def new
@@ -18,7 +19,7 @@ class QuestionsController < ApplicationController
         @question = current_user.questions.build(question_params)
         if @question.save
             flash[:notice] = "投稿に成功しました"
-            redirect_to questions_path
+            redirect_to questions_url
         else
             flash[:alert] = "投稿に失敗しました"
             render action: :new
