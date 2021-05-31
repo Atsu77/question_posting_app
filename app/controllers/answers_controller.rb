@@ -2,10 +2,10 @@ class AnswersController < ApplicationController
     include SessionsHelper
 
     def create
-        @answer = current_user.answers.build(answer_params).merge(user_id: current_user.id)
+        @answer = current_user.answers.build(answer_params)
         if @answer.save
             flash[:notice] = '回答しました'
-            redirect_to question_url(@question)
+            redirect_to question_url(@answer.question)
         else
             flash[:alert] = '回答に失敗しました'
             render template: 'questions/show'
@@ -14,6 +14,6 @@ class AnswersController < ApplicationController
 
     private
     def answer_params
-        params.require(:answer).permit(:content, :question_id)
+        params.permit(:question_id, :content)
     end
 end

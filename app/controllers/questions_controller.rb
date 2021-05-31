@@ -2,12 +2,13 @@ class QuestionsController < ApplicationController
     include SessionsHelper
     include UsersHelper
 
+    before_action :set_question, only: [:show, :destroy]
+
     def index
         @questions = Question.page(params[:page]).per(4)
     end
 
     def show
-        @question = Question.find(params[:id])
         @answer = @question.answers
     end
 
@@ -26,9 +27,17 @@ class QuestionsController < ApplicationController
         end
     end
 
+    def destroy
+        @question.destroy
+        redirect_to questions_url
+    end
     private
 
     def question_params
         params.require(:question).permit(:title, :content)
+    end
+
+    def set_question
+        @question = Question.find(params[:id])
     end
 end

@@ -1,10 +1,19 @@
 <div class="show__question">
-    <%= link_to gravatar_for(@question.user) %>
+    <%=  gravatar_for(@question.user)%>
     <div class="show__question_title">
         <%= @question.title  %>
     </div>
     <div class="show__question_content">
         <%= @question.content%>
+    </div>
+    <hr>
+        <div class="show__answer">
+        <h1>Answer</h1>
+        <%@question.answers.each do |answer| %>
+        <ul>
+            <li><%= answer.content%></li>
+        </ul>
+        <% end%>
     </div>
     <hr>
     <div class="show__reply">
@@ -15,4 +24,5 @@
         </div>
         <% end %>
     </div>
+
 </div>

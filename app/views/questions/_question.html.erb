@@ -1,2 +1,5 @@
     <%= link_to gravatar_for(question.user), user_path(question.user.id) %>
     <span class="content"><%= link_to question.title, question_path(question.id) %></span>
+    <% if current_user.admin? && current_user?(question.user) %>
+    <%= link_to '削除', question, class:'question__delete', method: :delete %>
+    <% end %> 
