@@ -8,12 +8,14 @@
     </div>
     <hr>
         <div class="show__answer">
+        <% if !@question.answers.nil?%>
         <h1>Answer</h1>
         <%@question.answers.each do |answer| %>
         <ul>
             <li><%= answer.content%></li>
         </ul>
         <% end%>
+        <% end %>
     </div>
     <hr>
     <div class="show__reply">
