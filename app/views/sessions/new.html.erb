@@ -6,9 +6,9 @@
         <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
         <%= f.email_field :email, placeholder: "メールアドレス" %>
         <%= f.password_field :password, placeholder: "パスワード"%>
-        <div class="button">
-            <%= f.submit "ログイン" , class: 'button'%>
-        </div>
+        <%= f.submit "ログイン" , class: 'btn btn-primary'%>
         <% end %>
+        <hr>
+        <%= link_to 'ゲストログイン', users_guest_login_path, method: :post, class: 'btn btn-secondary w-100'%>
     </div>
 </div>

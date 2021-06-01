@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'users#new'
+  root 'questions#index'
   resources :users
+  post 'users/guest_login', to: 'users#guest_login'
   resources :questions, only: %i[index show new create destroy] do
     resources :answers, only: %i[create]
   end

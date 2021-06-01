@@ -1,6 +1,6 @@
 ////universal
 html,
-body{
+body {
   height: 100%;
 }
 
@@ -58,7 +58,6 @@ hr {
   size: 50px;
 }
 
-
 //header
 
 .navbar {
@@ -69,7 +68,6 @@ hr {
 .body {
   padding-top: 58.3px;
 }
-
 
 .logo-img {
   height: 30px;
@@ -97,7 +95,7 @@ select,
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
-  padding-left: 10px;  
+  padding-left: 10px;
 }
 
 input {
@@ -115,13 +113,4 @@ textarea::placeholder {
   padding-top: calc(270px / 2);
 }
 
-.button {
-  text-align: center;
-  input {
-    margin-top: 25px;
-    width: 50%;
-    background-color: #36bfff;
-    border-radius: 30px;
-    border: none;
-  }
-}
+

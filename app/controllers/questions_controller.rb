@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
     include SessionsHelper
     include UsersHelper
-
+    before_action :login_question
     before_action :set_question, only: [:show, :destroy]
 
     def index
@@ -40,4 +40,11 @@ class QuestionsController < ApplicationController
     def set_question
         @question = Question.find(params[:id])
     end
+
+    def login_question
+        unless logged_in?
+            redirect_to login_url
+        end
+    end
+
 end
